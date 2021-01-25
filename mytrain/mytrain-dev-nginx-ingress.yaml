@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mytrain-dev-kic
+  annotations:
+      kubernetes.io/ingress.class: "nginx"
+      appprotect.f5.com/app-protect-policy: "default/mytrain-dev-nap-policy"
+      appprotect.f5.com/app-protect-enable: "True"
+      appprotect.f5.com/app-protect-security-log-enable: "True"
+      appprotect.f5.com/app-protect-security-log: "default/mytrain-dev-nap-logconf"
+      appprotect.f5.com/app-protect-security-log-destination: "syslog:server=192.168.211.11:5140"
+spec:
+  tls:
+  - hosts:
+    - mytrain-dev.foobz.com.au
+    secretName: foobz-com-au-tls
+  rules:
+  - host: mytrain-dev.foobz.com.au
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: train-schedule-svc
+          servicePort: 8080
