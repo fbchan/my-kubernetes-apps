@@ -14,14 +14,14 @@ spec:
     - serverTechnologyName: Node.js
     - serverTechnologyName: Express.js
     signatures:
-    #- signatureId: 200001475
-    #  enabled: false
-    #- signatureId: 200000098
-    #  enabled: false
-    #- signatureId: 200001088
-    #  enabled: false
-    #- signatureId: 200101609
-    #  enabled: false
+    - signatureId: 200001475
+      enabled: false
+    - signatureId: 200000098
+      enabled: false
+    - signatureId: 200001088
+      enabled: false
+    - signatureId: 200101609
+      enabled: false
     blocking-settings:
       violations:
       - name: VIOL_HTTP_PROTOCOL
