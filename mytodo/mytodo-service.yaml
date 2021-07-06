@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mytodo
+spec:
+  selector:
+    app: mytodo
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8080
