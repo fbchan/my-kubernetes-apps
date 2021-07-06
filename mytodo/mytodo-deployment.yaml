@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mytodo
+  labels:
+    app: mytodo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mytodo
+  template:
+    metadata:
+      labels:
+        app: mytodo
+    spec:
+      containers:
+      - name: todo
+        image: foobz/node-todo:latest
+        ports:
+        - containerPort: 8080
