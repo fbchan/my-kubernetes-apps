@@ -49,6 +49,7 @@ metadata:
   labels:
     app: carts-db
     name: carts-db
+    ves.io/app_type: sock-shop
   namespace: sock-shop
 spec:
   ports:
@@ -114,6 +115,7 @@ metadata:
   labels:
     app: carts
     name: carts
+    ves.io/app_type: sock-shop
   namespace: sock-shop
 spec:
   ports:
@@ -164,6 +166,7 @@ metadata:
   labels:
     app: catalogue-db
     name: catalogue-db
+    ves.io/app_type: sock-shop
   namespace: sock-shop
 spec:
   ports:
@@ -217,6 +220,7 @@ metadata:
   labels:
     app: catalogue
     name: catalogue
+    ves.io/app_type: sock-shop
   namespace: sock-shop
 spec:
   ports:
@@ -269,14 +273,15 @@ metadata:
   labels:
     app: front-end
     name: front-end
+    ves.io/app_type: sock-shop
   namespace: sock-shop
 spec:
-  type: NodePort
+#  type: NodePort
   ports:
   - port: 80
     name: http
     targetPort: 8079
-    nodePort: 30001
+#    nodePort: 30001
   selector:
     name: front-end
 ---
@@ -331,6 +336,7 @@ metadata:
   labels:
     app: orders-db
     name: orders-db
+    ves.io/app_type: sock-shop
   namespace: sock-shop
 spec:
   ports:
@@ -396,6 +402,7 @@ metadata:
   labels:
     app: orders
     name: orders
+    ves.io/app_type: sock-shop
   namespace: sock-shop
 spec:
   ports:
@@ -449,6 +456,7 @@ metadata:
   labels:
     app: payment
     name: payment
+    ves.io/app_type: sock-shop
   namespace: sock-shop
 spec:
   ports:
@@ -493,6 +501,7 @@ metadata:
   labels:
     app: queue-master
     name: queue-master
+    ves.io/app_type: sock-shop
   annotations:
     prometheus.io/path: "/prometheus"
   namespace: sock-shop
@@ -549,6 +558,7 @@ metadata:
   labels:
     app: rabbitmq
     name: rabbitmq
+    ves.io/app_type: sock-shop
   namespace: sock-shop
 spec:
   ports:
@@ -614,6 +624,7 @@ metadata:
   labels:
     app: shipping
     name: shipping
+    ves.io/app_type: sock-shop
   namespace: sock-shop
 spec:
   ports:
@@ -675,6 +686,7 @@ metadata:
   labels:
     app: user-db
     name: user-db
+    ves.io/app_type: sock-shop
   namespace: sock-shop
 spec:
   ports:
@@ -731,6 +743,7 @@ metadata:
   labels:
     app: user
     name: user
+    ves.io/app_type: sock-shop
   namespace: sock-shop
 spec:
   ports:
