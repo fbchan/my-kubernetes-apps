@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nettools
+  labels:
+    app: nettools
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nettools
+  template:
+    metadata:
+      labels:
+        app: nettools
+    spec:
+     containers:
+      - name: nettools
+        image: reg.foobz.com.au/apps/blindfold-app
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: inputjson
+          mountPath: /usr/src/app/input.json
+          subPath: input.json
+     volumes:
+       - name: inputjson
+         configMap:
+           name: my-blindfold-secret
